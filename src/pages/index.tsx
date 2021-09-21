@@ -24,9 +24,31 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-// export default function Home() {
-//   // TODO
-// }
+export default function Home() {
+  return (
+    <>
+      <header>spacetravelling</header>
+      <main className={styles.contentContainer}>
+        <div className={styles.posts}>
+          <a>
+            <strong>Titulo do post</strong>
+            <span>Lorem ipsum dolor sit amet, consectetur</span>
+            <time>20 de setembro de 2021</time>
+          </a>
+
+          <a>
+            <strong>Titulo do post</strong>
+            <span>Lorem ipsum dolor sit amet, consectetur</span>
+            <div className={styles.info}>
+            <time>20 de setembro de 2021</time>
+            <span>Autor</span>
+            </div>
+          </a>
+        </div>
+      </main>
+    </>
+  );
+}
 
 // export const getStaticProps = async () => {
 //   // const prismic = getPrismicClient();

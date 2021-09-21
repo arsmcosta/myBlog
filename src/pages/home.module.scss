@@ -1,1 +1,27 @@
-// TODO
+.contentContainer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.posts {
+  a {
+    display: block;
+
+    & + a {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--highligt);
+    }
+  }
+
+  .info {
+    color: var(--highligt);
+    display: flex;
+    gap: 3rem;
+  }
+}
