@@ -1,5 +1,5 @@
 .contentContainer {
-  max-width: 1120px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 2rem;
 
@@ -11,11 +11,14 @@
 .posts {
   a {
     display: block;
-
     & + a {
       margin-top: 2rem;
       padding-top: 2rem;
       border-top: 1px solid var(--highligt);
+    }
+
+    strong {
+      display: block;
     }
   }
 
