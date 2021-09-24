@@ -1,30 +1,38 @@
 .contentContainer {
-  max-width: 600px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 2rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .posts {
+  max-width: 700px;
+  margin: 5rem auto 0;
+
   a {
     display: block;
     & + a {
       margin-top: 2rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--highligt);
     }
-
     strong {
       display: block;
-    }
-  }
 
-  .info {
-    color: var(--highligt);
-    display: flex;
-    gap: 3rem;
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: var(--heading);
+      & + strong {
+        margin-top: 1rem;
+        color: var(--body);
+        font-size: 1.125rem;
+      }
+    }
+
+    .info {
+      margin-top: 1rem;
+      display: flex;
+      gap: 3rem;
+      font-size: 1rem;
+      color: var(--info);
+    }
   }
 }

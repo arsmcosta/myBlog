@@ -32,20 +32,16 @@ export default function Home({ results }: PostPagination) {
       <header>spacetravelling</header>
       <main className={styles.contentContainer}>
         <div className={styles.posts}>
-          <ul>
-            {results.map(post => (
-              <main key={post.uid} className={styles.contentContainer}>
-                <div className={styles.posts}>
-                {console.log(post.data)}
-                  <a>
-                    <strong>{post.data.title}</strong>
-                    <span>{post.data.author}</span>
-                    <time>{post.first_publication_date}</time>
-                  </a>
-                </div>
-              </main>
-            ))}
-          </ul>
+          {results.map(post => (
+            <a>
+              <strong>{post.data.title}</strong>
+              <strong>{post.data.subtitle}</strong>
+              <div className={styles.info}>
+                <span>{post.data.author}</span>
+                <time>{post.first_publication_date}</time>
+              </div>
+            </a>
+          ))}
         </div>
       </main>
     </>
@@ -57,10 +53,12 @@ export const getStaticProps: GetStaticProps = async () => {
   const postsResponse = await prismic.query(
     [Prismic.predicates.at('document.type', 'posts')],
     {
-      fetch: ['posts.title', 'posts.content'],
+      fetch: ['posts.title', 'posts.subtitle', 'posts.author'],
       pageSize: 100,
     }
   );
+
+  console.log(postsResponse.results);
 
   const results = postsResponse.results.map(post => {
     return {
@@ -74,6 +72,8 @@ export const getStaticProps: GetStaticProps = async () => {
       }),
       data: {
         title: post.data.title,
+        subtitle: post.data.subtitle,
+        author: post.data.author,
       },
     };
   });
