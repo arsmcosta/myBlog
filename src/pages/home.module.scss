@@ -30,9 +30,29 @@
     .info {
       margin-top: 1rem;
       display: flex;
-      gap: 3rem;
-      font-size: 1rem;
+      font-size: 0.875;
       color: var(--info);
+
+      section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        & + section {
+          padding-left: 2rem;
+        }
+      }
     }
+  }
+
+  button {
+    color: var(--highlight);
+    border: none;
+    background: none;
+
+    font-weight: 600;
+
+    margin-top: 2rem;
+    padding-top: 2rem;
   }
 }
